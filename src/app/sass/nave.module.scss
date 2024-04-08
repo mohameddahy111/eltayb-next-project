@@ -1,0 +1,7 @@
+@import "var";
+
+.title{
+    background: -webkit-linear-gradient( left , $fcolor, $scolor);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+} 

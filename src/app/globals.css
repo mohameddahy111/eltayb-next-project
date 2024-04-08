@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --fcolor: #f0c000;
+    --scolor: #203040;
+}
+
+* {
+    font-family: "Exo 2", sans-serif !important;
+
+    /*color: var(--scolor);*/
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  height: 100%;
+    background-repeat: no-repeat;
+    background-image: radial-gradient(100% 50% at 50% 0%,rgba(0,163,255,0.13) 0% ,rgba(0,163,255,0) 50%, rgba(0,163,255,0) 100%);
+/*
+rgba(0,163,255,0.13)
+rgba(0,163,255,0)_50%
+rgba(0,163,255,0)
+*/
+
+}
+
+.box-flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+    /*color: #f6f0f0;*/
+}
+
+.box-flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+}
+
+a {
+    text-decoration: none;
+}
+.profileList{
+background-image: linear-gradient( -10deg, rgba(128, 213, 241, 0.65) 20% , #ffffff 80%);
+}
+.price-remov{
+    text-decoration: line-through ;
+    color: red;
+}
+.sub-title{
+    background: -webkit-linear-gradient(  #efd994, #efbbbb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    text-transform: capitalize;
+}

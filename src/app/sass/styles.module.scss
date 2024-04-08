@@ -1,0 +1,90 @@
+@import 'var';
+
+
+.boxTitle {
+  color: $titleColor;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  h3 {
+    color: $subtitleColor;
+  }
+}
+
+.clip {
+  position: relative;
+  color: $titleColor;
+  width: 300px;
+  height: 300px;
+  //background-color: #66c2e0;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  transition: all .6s ease-in-out;
+  box-shadow: 0 0 4px gray;
+
+  img {
+    transition: all .6s ease-in-out;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    position: relative;
+
+
+    &:hover {
+      border-radius: 20px;
+      box-shadow: 0 0 10px gray;
+    }
+
+    //&::before {
+    //  position: absolute;
+    //  width: 100%;
+    //  content: "";
+    //
+    //  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    //  top: 0;
+    //  bottom: 0;
+    //  left: 0;
+    //  right: 0;
+    //  background-color: rgba(240, 240, 240, 0.32);
+    //}
+    //
+    //&::after {
+    //  position: absolute;
+    //  width: 20px;
+    //  height: 20px;
+    //
+    //  content: "";
+    //  left: 40px;
+    //  top: 40px;
+    //  border-radius: 50%;
+    //  box-shadow: 0 10px 10px #f3f3f3;
+    //  background-color: rgb(255, 255, 255);
+    //  opacity: 70%;
+    //
+    //
+    //}
+
+  }
+
+  &:hover {
+    border-radius: 20px;
+    box-shadow: 0 0 10px gray;
+  }
+
+
+}
+.StartBtn{
+  background-color: $scolor;
+  font-weight: 700;
+border-radius: 20px;
+  color: $subtitleColor;
+  svg{
+    color: $subtitleColor;
+  }
+  &:hover{
+    background-color: $titleColor;
+    color: $subtitleColor;
+
+}
+}
+
