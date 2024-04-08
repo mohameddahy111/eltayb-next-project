@@ -1,0 +1,25 @@
+<svg width="430" height="430" viewBox="0 0 430 430" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M100 115L130 400H300L330 115" fill="#EBE6EF"/>
+<g style="mix-blend-mode:multiply" opacity="0.5">
+<path d="M130 400L100 115H145L175 400H130Z" fill="#EBE6EF"/>
+</g>
+<path d="M110 70L130 30H300L320 70" fill="#3A3347"/>
+<g style="mix-blend-mode:multiply" opacity="0.4">
+<path d="M110 70L130 30H300L320 70" fill="#3A3347"/>
+</g>
+<path d="M350 115H80V70H350V115Z" fill="#3A3347"/>
+<g style="mix-blend-mode:multiply" opacity="0.5">
+<path d="M130 30L110 70H155L175 30H130Z" fill="#3A3347"/>
+</g>
+<g style="mix-blend-mode:multiply" opacity="0.5">
+<path d="M80 115H125V70H80V115Z" fill="#3A3347"/>
+</g>
+<path d="M107.895 190H322.105L307.895 325H122.105L107.895 190Z" fill="#B26836"/>
+<g style="mix-blend-mode:multiply" opacity="0.5">
+<path d="M152.895 190H107.895L122.105 325H167.105L152.895 190Z" fill="#B26836"/>
+</g>
+<path d="M100 115L130 400H300L330 115" stroke="#121331" stroke-width="7" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M110 70L130 30H300L320 70" stroke="#121331" stroke-width="7" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M350 115H80V70H350V115Z" stroke="#121331" stroke-width="7" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M322.105 190H107.895M122.105 325H307.895" stroke="#121331" stroke-width="7" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
