@@ -6,8 +6,8 @@ import axios from "axios";
 import { Store } from "@/context/dataStore";
 
 export default function Quantity({ data }) {
-  const { enqueueSnackbar } = useSnackbar();
-  const {decodeUserInfo} = Store()
+  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+  const { decodeUserInfo } = Store();
   const [value, setValue] = useState(data?.quantity);
   const setNewQuantity = (val) => {
     if (val === "add") {
@@ -22,13 +22,18 @@ export default function Quantity({ data }) {
       itemId: data._id,
       quantity: value
     };
+
     await axios
       .put("/add_to_cart", item)
       .then((res) => {
         console.log(res);
-        decodeUserInfo()
+        decodeUserInfo();
+        closeSnackbar();
+        enqueueSnackbar(`${res.data.message}`, { variant: "success" });
       })
       .catch((err) => {
+        enqueueSnackbar(`${err.response.data.message}`, { variant: "error" });
+        setValue(data.quantity)
         console.log(err);
       });
   };

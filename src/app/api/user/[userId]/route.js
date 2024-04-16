@@ -12,7 +12,7 @@ export async function GET(req,) {
   if (!id) {
     return NextResponse.json({message: "token is expierd"}, {status: 401});
   }
-  const user = await User.findById(id).select({password: false});
+  const user = await User.findById(id).select({password: false}).populate('orders');
   return NextResponse.json({user});
 }
 

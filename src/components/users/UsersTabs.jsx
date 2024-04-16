@@ -46,23 +46,45 @@ export default function UsersTabs() {
   };
   
   return (
-   <Box sx={{ width: '100%' }}>
-     <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-       <Tabs value={value} onChange={handleChange} aria-label="basic tabs example">
-         <Tab  icon={   <Groups2Outlined/>} {...a11yProps(0)} />
-         <Tab icon={<Settings/>} {...a11yProps(1)} />
-         <Tab icon={<Edit/>} {...a11yProps(2)} />
-       </Tabs>
-     </Box>
-     <CustomTabPanel value={value} index={0}>
-   <FrindesList/>
-     </CustomTabPanel>
-     <CustomTabPanel value={value} index={1}>
-       Item Two
-     </CustomTabPanel>
-     <CustomTabPanel value={value} index={2}>
-       Item Three
-     </CustomTabPanel>
-   </Box>
+    <Box sx={{ width: "100%" }}>
+      <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+        <Tabs
+          value={value}
+          onChange={handleChange}
+          aria-label="basic tabs example"
+        >
+          <Tab
+            icon={
+              <img
+                src="../management-team.gif"
+                alt="management-team"
+                width={40}
+              />
+            }
+            {...a11yProps(0)}
+          />
+          <Tab
+            icon={
+              <img
+                src="../order-history.gif"
+                alt="management-team"
+                width={40}
+              />
+            }
+            {...a11yProps(1)}
+          />
+          <Tab icon={<Edit />} {...a11yProps(2)} />
+        </Tabs>
+      </Box>
+      <CustomTabPanel value={value} index={0}>
+        <FrindesList />
+      </CustomTabPanel>
+      <CustomTabPanel value={value} index={1}>
+        Item Two
+      </CustomTabPanel>
+      <CustomTabPanel value={value} index={2}>
+        Item Three
+      </CustomTabPanel>
+    </Box>
   );
 }

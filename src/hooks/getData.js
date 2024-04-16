@@ -18,5 +18,5 @@ export const useGetData = (url ) => {
       setLoading(false)
     })
   }, []);
-  return {data, loading, error}
+  return {data, loading, error , setData}
 }

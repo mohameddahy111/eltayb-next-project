@@ -33,14 +33,19 @@ const theme = createTheme({
       fontWeight: 700
     },
     h5: {
-      fontSize: "1.5rem",
+      fontSize: "1.4rem",
       textTransform: "capitalize",
       fontWeight: 600
     },
     h6: {
-      fontSize: "1.4rem",
+      fontSize: "1.1rem",
       textTransform: "capitalize",
       fontWeight: 600
+    }
+  },
+  palette: {
+    success: {
+      main: "#33cf4d"
     }
   }
 });

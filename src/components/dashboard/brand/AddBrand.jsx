@@ -81,6 +81,7 @@ export const AddBrand= () => {
            </IconButton>
          </Tooltip>
        </Box>
+
        <DialogTitle textAlign="center">
          Add Brand
        </DialogTitle>

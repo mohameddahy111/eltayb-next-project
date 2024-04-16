@@ -17,13 +17,19 @@ import {
   TableBody,
   Box,
   Grid,
-  Card
+  Card,
+  List,
+  ListItem,
+  Divider,
+  Chip
 } from "@mui/material";
 import { Delete, ShoppingCartOutlined } from "@mui/icons-material";
 import { Store } from "@/context/dataStore";
 import Quantity from "./Quantity";
+import { useRouter } from "next/navigation";
 
 export default function CartDetials() {
+    const router = useRouter()
   const [open, setOpen] = useState(false);
   const { cartItems } = Store();
   const handlerOpen = () => {
@@ -35,19 +41,25 @@ export default function CartDetials() {
   const list = ["Name", "quantity", "size", "price", "delete"];
   return (
     <>
-      <Badge badgeContent={cartItems?.total_cart_quantity} color="success">
-        <IconButton onClick={handlerOpen}>
-          <ShoppingCartOutlined sx={{ color: "#f0c000" }} />
+      <Badge overlap='circular' sx={{mt:2}} badgeContent={cartItems?.total_cart_quantity} color="success">
+        <IconButton onClick={handlerOpen} >
+          {/* <ShoppingCartOutlined sx={{ color: "#f0c000" }} /> */}
+          <img src={'../basket.gif'} alt="basket" width={40} />
         </IconButton>
       </Badge>
 
       <Dialog open={open} fullScreen>
-        <DialogTitle> Cart items </DialogTitle>
+        <DialogTitle textAlign={"center"} py={3} fontWeight={800} variant="h4">
+          {" "}
+          Cart items{" "}
+        </DialogTitle>
         <DialogContent>
-          <DialogContentText></DialogContentText>
-          <Box>
-            <Typography>{cartItems.total_Cart_After_Discount}</Typography>
-          </Box>
+          <DialogContentText>
+            <Typography>
+              * All product prices are without tax and delivery service
+            </Typography>
+          </DialogContentText>
+          <Box></Box>
           <TableContainer>
             <Grid container spacing={1}>
               <Grid item md={9} xs={12}>
@@ -127,9 +139,85 @@ export default function CartDetials() {
                 </Table>
               </Grid>
               <Grid item md={3} xs={12}>
-               <Card>
-sdvgsd
-               </Card>
+                <Card>
+                  <List>
+                    <ListItem>
+                      <Grid item xs={12}>
+                        <Typography
+                          textTransform={"capitalize"}
+                          fontWeight={700}
+                        >
+                          total Items :
+                        </Typography>
+                      </Grid>
+                      <Grid item xs={12}>
+                        ({cartItems.total_cart_quantity}) item(s)
+                      </Grid>
+                    </ListItem>
+                    <ListItem>
+                      <Grid item xs={12}>
+                        <Typography
+                          textTransform={"capitalize"}
+                          fontWeight={700}
+                        >
+                          total price :
+                        </Typography>
+                      </Grid>
+                      <Grid item xs={12}>
+                        {cartItems.total_cart_price} EP
+                      </Grid>
+                    </ListItem>
+                    <ListItem>
+                      <Grid item xs={12}>
+                        <Typography
+                          textTransform={"capitalize"}
+                          fontWeight={700}
+                        >
+                          total Discount :
+                        </Typography>
+                      </Grid>
+                      <Grid item xs={12}>
+                        <Typography color={"red"}>
+                          {cartItems.total_Cart_After_Discount -
+                            cartItems.total_cart_price}{" "}
+                          EP
+                        </Typography>
+                      </Grid>
+                    </ListItem>
+                    <Divider>
+                      <Chip label={"total"} />
+                    </Divider>
+                    <ListItem>
+                      <Grid item xs={12}>
+                        <Typography
+                          textTransform={"capitalize"}
+                          fontWeight={700}
+                        >
+                          total :
+                        </Typography>
+                      </Grid>
+                      <Grid item xs={12}>
+                        <Typography>
+                          {cartItems.total_Cart_After_Discount} EP
+                        </Typography>
+                      </Grid>
+                    </ListItem>
+                    <ListItem>
+                      <Button
+                        onClick={() => {router.push('/place_order/shipping') ; handlerClose()}}
+                        fullWidth
+                        sx={{
+                          bgcolor: "#f0c000",
+                          color: "#203040",
+                          fontWeight: "bold",
+                          ":hover": { bgcolor: "#f0c017" }
+                        }}
+                      >
+                        Checked Cart
+                      </Button>
+                    </ListItem>
+                  </List>
+                </Card>
               </Grid>
             </Grid>
           </TableContainer>

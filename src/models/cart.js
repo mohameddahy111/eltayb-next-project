@@ -1,23 +1,25 @@
 import mongoose from "mongoose";
 
 const cartSchema = new mongoose.Schema({
-  userId: {type: mongoose.Schema.Types.ObjectId, ref: 'User', unique: true},
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: "User", unique: true },
   items: [
     {
-      productId: {type: mongoose.Schema.Types.ObjectId, ref: 'Product'},
-      productName: {type: String, required: true},
-      quantity: {type: Number, required: true},
-      size: {type: String, required: true},
-      notes: {type: String,},
-      totalPrice: {type: Number, required: true},
-      offer_value: {type: Number},
-      total_After_Discount: {type: Number,},
-    },
+      productId: { type: mongoose.Schema.Types.ObjectId, ref: "Product" },
+      productName: { type: String, required: true },
+      quantity: { type: Number, required: true },
+      size: { type: String, required: true },
+      notes: { type: String },
+      totalPrice: { type: Number, required: true },
+      offer_value: { type: Number },
+      total_After_Discount: { type: Number },
+      price: { type: Number },
+      final_price: { type: Number }
+    }
   ],
-  total_cart_price: {type: Number,},
-  total_cart_quantity: {type: Number,},
-  total_Cart_After_Discount: {type: Number,}
-})
+  total_cart_price: { type: Number },
+  total_cart_quantity: { type: Number },
+  total_Cart_After_Discount: { type: Number }
+});
 cartSchema.pre('save', function () {
   let total_cart_price = 0
   let total_cart_quantity = 0
