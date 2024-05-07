@@ -8,7 +8,7 @@ import {useRouter} from "next/navigation";
 import {useGetData} from "@/hooks/getData";
 import {SwiperShow} from "@/components/home/SwiperShow";
 
-export default function Home() {
+export default function Home() { 
   const {data} = useGetData('brand/')
   const router = useRouter()
   const {mobileDivices} = Store()

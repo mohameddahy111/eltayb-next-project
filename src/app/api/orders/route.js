@@ -47,3 +47,27 @@ export async function POST(req) {
 
   return NextResponse.json({ message: "", order });
 }
+export async function GET(req) {
+  const searchParams = req.nextUrl.searchParams;
+  const page = searchParams.get("page");
+  const skip = page ? 10 * (page - 1) : 0;
+  await connect();
+  const all = await Oredr.find();
+  const orders = (
+    await Oredr.find()
+      .skip(skip)
+      .limit(page ? 10 : null)
+      .populate([
+        { path: "userId", select: ["name", "email", "mobile"] },
+        { path: "seenBy", select: ["name", "email", "mobile"] }
+      ])
+  ).reverse();
+  const pagination = {
+    pages: Math.ceil(all.length / 10),
+    page,
+    nextUrl:
+      page == Math.ceil(all.length / 10) ? null : `orders?page=${+page + 1}`,
+    preUrl: page <= 1 ? null : `orders?page=${page - 1}`
+  };
+  return NextResponse.json({ orders, pagination });
+}

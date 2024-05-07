@@ -5,7 +5,7 @@ import { NextResponse } from "next/server";
 export async function GET() {
   await connect();
   const newOrders = await Oredr.find({ seen: false }).populate([
-    { path: "userId", select: ["name", "email"] }
+    { path: "userId", select: ["name", "email", "mobile"] }
   ]);
   const orders = newOrders.reverse();
   return NextResponse.json({ number: newOrders.length, newOrders: orders });

@@ -56,6 +56,14 @@ export default function Layout({ children }) {
               new Orders{" "}
             </Button>
           </Badge>
+          <Button
+            onClick={() => {
+              router.push("/dashboard/all_orders");
+            }}
+          >
+            all Orders{" "}
+          </Button>
+
           <AddCategory />
           <AddBrand />
         </ButtonGroup>

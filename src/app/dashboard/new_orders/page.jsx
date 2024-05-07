@@ -27,7 +27,7 @@ import { useRouter } from "next/navigation";
 
 export default function Page() {
   const { data, loading } = useGetData("orders/notification");
-  console.log(data)
+  console.log(data);
   const router = useRouter();
   return (
     <Box>
@@ -79,14 +79,11 @@ export default function Page() {
             <TableBody>
               {data?.newOrders?.map((ele, index) => (
                 <TableRow key={index}>
+                  <TableCell align="center">{ele._id}</TableCell>
                   <TableCell align="center">
-                  {ele._id}
-                  </TableCell>
-                  <TableCell align="center">
-                  <Typography textTransform={'capitalize'}>
-     {ele.userId.name}
-                  </Typography>
-             
+                    <Typography textTransform={"capitalize"}>
+                      {ele.userId.name}
+                    </Typography>
                   </TableCell>
                   <TableCell align="center">
                     <Typography variant="">{ele.total_price} EP</Typography>
@@ -94,8 +91,7 @@ export default function Page() {
                   <TableCell align="center">
                     <Typography variant="">{ele.total_price} EP</Typography>
                   </TableCell>
-                 <TableCell align="center">
-                  </TableCell>
+                  <TableCell align="center"></TableCell>
                   <TableCell align="center">{ele.createdAt}</TableCell>
                 </TableRow>
               ))}

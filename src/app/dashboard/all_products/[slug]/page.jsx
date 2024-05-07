@@ -22,9 +22,11 @@ import { PriceTable } from "@/components/dashboard/productes/PriceTable";
 import { useSnackbar } from "notistack";
 import axios from "axios";
 import { useGetData } from "@/hooks/getData";
+import { useRouter } from "next/navigation";
 
 export default function Page({ params }) {
   const { slug } = params;
+  const route = useRouter();
   const { data, loading, setData } = useGetData(`products/${slug}`);
   const [choseList, setChoseList] = useState(sizeList);
   const { enqueueSnackbar } = useSnackbar();
@@ -156,8 +158,8 @@ export default function Page({ params }) {
             // setUrlImg("");
             // setPriceList([]);
             // setData(res.data);
-
-            useGetData(`products/${res.data.product.slug}`);
+            route.push(`/dashboard/all_products/${res.data.product.slug}`);
+            // useGetData(`products/${res.data.product.slug}`);
           }
         })
         .catch((err) => {
