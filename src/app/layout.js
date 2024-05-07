@@ -50,7 +50,7 @@ const theme = createTheme({
   }
 });
 axios.defaults.baseURL = "http://localhost:3000/api/";
-axios.defaults.headers={ 'Content-Type': 'application/json' ,'Access-Control-Allow-Origin':'*' }
+// axios.defaults.headers={ 'Content-Type': 'application/json' ,'Access-Control-Allow-Origin':'*' }
 export default function RootLayout({children}) {
   
  
