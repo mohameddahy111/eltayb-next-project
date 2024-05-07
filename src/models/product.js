@@ -24,10 +24,10 @@ const ProductSchema = new mongoose.Schema({
       _isAvailable: {type: Boolean, default: true},
     },
   ],
-  brand: {type: mongoose.Types.ObjectId, ref: "Brand"},
-  category: {type: mongoose.Types.ObjectId, ref: "Category"},
+  brand: {type: mongoose.Types.ObjectId, ref:"Brand"},
+  category: {type: mongoose.Types.ObjectId, ref:"Category"},
   createdAt: {type: Date, default: Date.now},
-  createdBy: {type: mongoose.Types.ObjectId, ref: "User"},
+  createdBy: {type: mongoose.Types.ObjectId, ref:"User"},
 }, {timestamps: true, toObject: {virtuals: true}, toJSON: {virtuals: true}});
 const Product = mongoose.models?.Product || mongoose.model('Product', ProductSchema);
 export default Product;
