@@ -28,8 +28,8 @@ export async function middleware(req) {
 export const config = {
   matcher: [
     "/api/user/:path*",
-    // "/api/category/categoryCrud/:path*",
-    // "/api/products/add_product/:path*",
+    "/api/category/categoryCrud/:path*",
+    "/api/products/add_product/:path*",
     "/api/add_to_cart/:path*",
     "/api/add_address/:path*"
   ]
