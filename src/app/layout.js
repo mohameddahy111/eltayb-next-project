@@ -50,7 +50,7 @@ const theme = createTheme({
   }
 });
 axios.defaults.baseURL = "https://eltayb-next-project.vercel.app/api/";
-axios.defaults.headers={ 'Content-Type': 'application/json' ,'Access-Control-Allow-Origin':'*' }
+// axios.defaults.headers={ 'Content-Type': 'application/json' ,'Access-Control-Allow-Origin':'*' }
 export default function RootLayout({children}) {
   
  
