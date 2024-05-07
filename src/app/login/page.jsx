@@ -30,7 +30,7 @@ export default function Page() {
     onSubmit: async (values) => {
       setLoading(true);
       await axios
-        .post("/login", values)
+        .post("/login", values   , {headers:{}})
         .then((res) => {
           enqueueSnackbar(`${res.data.message}`, { variant: "success" });
           decodeUserInfo();
