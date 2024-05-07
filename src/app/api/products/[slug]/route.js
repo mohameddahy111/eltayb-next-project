@@ -10,7 +10,7 @@ export async function GET(req, {params}) {
      path: "category",
      select: ['name', '_id',]
    },
-     {path: "brand", select: ['name', '_id']}
+     {path:"brand", select: ['name', '_id']}
    ])
   if (!product) return NextResponse.json({message: "No product found"}, {status: 404});
   return NextResponse.json({product})
